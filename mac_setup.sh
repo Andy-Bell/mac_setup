@@ -14,7 +14,7 @@ install_encryptme() {
 install_mac_apps() {
     if [ ! -f ~/.apps_installed ]
     then
-        curl -s 'https://macapps.link/en/chrome-dropbox-alfred-docker-iterm-1password-flux-spectacle-spotify-vlc-slack' | sh
+        curl -s 'https://macapps.link/en/firefoxdev-alfred-docker-iterm-1password-spotify-thunderbird-slack' | sh
     fi
 }
 
@@ -51,11 +51,10 @@ write_defaults() {
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 }
 
-install_go() {
-    if [[ -z `which go` ]]
+install_rustup() {
+    if [[ -z `which rustup` ]]
     then
-        curl https://dl.google.com/go/go1.10.3.darwin-amd64.pkg > /tmp/go.pkg
-        sudo installer -pkg /tmp/go.pkg -target /
+        curl https://sh.rustup.rs -sSf | sh
     fi
 }
 
@@ -65,7 +64,7 @@ install_mac_apps
 brew_install_the_universe
 install_rubies
 write_defaults
-install_go
+install_rustup
 
 mkdir -p ~/dev
 
@@ -77,7 +76,7 @@ fi
 
 if [ ! -d ~/.dotfiles ]
 then
-    git clone git@github.com:samphippen/dotfiles ~/.dotfiles
+    git clone git@github.com:andy-bell/dotfiles ~/.dotfiles
     cd ~/.dotfiles && rake install
 fi
 echo "now log off"
