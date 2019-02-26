@@ -28,7 +28,7 @@ brew_install_the_universe() {
     then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-    formulas="chruby wget ruby-install hub npm direnv redis python3 redis ctags elasticsearch jq watch imagemagick selecta htop vim cmake automake autoreconf libtool"
+    formulas="chruby wget ruby-install hub direnv redis python3 redis ctags elasticsearch jq watch imagemagick selecta htop vim cmake automake autoreconf libtool tig tmux"
     for formula in $formulas
     do
         brew install $formula || brew upgrade $formula
