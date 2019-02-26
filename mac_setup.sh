@@ -58,6 +58,13 @@ install_rustup() {
     fi
 }
 
+install_node {
+    if [[ -z `command -v nvm` ]]
+    then
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    fi
+}
+
 
 install_encryptme
 install_mac_apps
@@ -65,6 +72,7 @@ brew_install_the_universe
 install_rubies
 write_defaults
 install_rustup
+install_node
 
 mkdir -p ~/dev
 
