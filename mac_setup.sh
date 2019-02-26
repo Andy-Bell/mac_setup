@@ -68,12 +68,6 @@ install_rustup
 
 mkdir -p ~/dev
 
-if [ ! -d ~/dev/rspec ]
-then
-    mkdir -p ~/dev/rspec
-    git clone git@github.com:rspec/rspec-dev ~/dev/rspec/
-fi
-
 if [ ! -d ~/.dotfiles ]
 then
     git clone git@github.com:andy-bell/dotfiles ~/.dotfiles
