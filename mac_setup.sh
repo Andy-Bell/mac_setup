@@ -65,6 +65,18 @@ install_node {
     fi
 }
 
+install_powerline_fonts{
+    if [ ! -d ~/.fonts ]
+    then
+        # clone
+        git clone https://github.com/powerline/fonts.git ~./fonts --depth=1
+        # install
+        cd fonts
+        ./install.sh
+        # clean-up a bit
+        cd ..
+    fi
+}
 
 install_encryptme
 install_mac_apps
@@ -73,6 +85,7 @@ install_rubies
 write_defaults
 install_rustup
 install_node
+install_powerline_fonts
 
 mkdir -p ~/dev
 
