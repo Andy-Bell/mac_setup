@@ -28,7 +28,7 @@ brew_install_the_universe() {
     then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-    formulas="chruby wget ruby-install hub direnv redis python3 redis ctags elasticsearch jq watch imagemagick selecta htop vim cmake automake autoreconf libtool tig tmux zsh zsh-completions"
+    formulas="chruby wget ruby-install hub direnv redis python3 redis ctags jq watch imagemagick selecta htop vim cmake automake libtool tig tmux zsh zsh-completions"
     for formula in $formulas
     do
         brew install $formula || brew upgrade $formula
@@ -65,13 +65,13 @@ install_node() {
     fi
 }
 
-install_powerline_fonts{
+install_powerline_fonts() {
     if [ ! -d ~/.fonts ]
     then
         # clone
-        git clone https://github.com/powerline/fonts.git ~./fonts --depth=1
+        git clone https://github.com/powerline/fonts.git ~/.fonts --depth=1
         # install
-        cd fonts
+        cd .fonts
         ./install.sh
         # clean-up a bit
         cd ..
