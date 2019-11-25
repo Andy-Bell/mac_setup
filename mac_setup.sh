@@ -14,7 +14,7 @@ install_encryptme() {
 install_mac_apps() {
     if [ ! -f ~/.apps_installed ]
     then
-        curl -s 'https://macapps.link/en/firefoxdev-alfred-docker-iterm-1password-spotify-thunderbird-slack' | sh
+        curl -s 'https://macapps.link/en/firefoxdev-alfred-docker-iterm-1password-spotify-thunderbird-slack-vscode' | sh
     fi
 }
 
